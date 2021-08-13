@@ -2,6 +2,9 @@ pipeline {
     agent {
         label 'linux'
     }
+    tools {
+    tool name: 'mvn_3.8.1', type: 'maven'
+    }
 
     stages {
         stage ('Checkout Java Code'){
