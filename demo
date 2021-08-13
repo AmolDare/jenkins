@@ -22,9 +22,11 @@ pipeline {
                 }
             }
         }
-        stage('Check Docker version') {
+        stage('Create Docker image') {
             steps {
-                sh 'docker version'
+                sh '''docker image ls 
+                docker image build .  -f Dockerfile -t amoldare/devops:latest
+                docker image ls'''
             }
         }
         stage ('SAST'){
