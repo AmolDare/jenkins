@@ -4,6 +4,7 @@ pipeline {
     }
     tools {
         maven 'mvn_3.8.1'
+        dockerTool 'latestdocker'
     }
 
     stages {
@@ -22,9 +23,9 @@ pipeline {
                 }
             }
         }
-        stage('How are you?') {
+        stage('Docker Build') {
             steps {
-                echo 'How are you?'
+                sh 'docker build'
             }
         }
         stage ('SAST'){
