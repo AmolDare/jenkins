@@ -24,8 +24,8 @@ pipeline {
         }
         stage('Push Docker image') {
             steps {
-                sh '''docker login -u ${dockeruser} -p ${dockerpassword}
-                    docker push amoldare/devops:latest'''
+                sh 'docker push amoldare/devops:latest'
+                   
             }
         }
         stage ('SAST'){
